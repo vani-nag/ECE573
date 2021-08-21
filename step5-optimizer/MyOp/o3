@@ -1,0 +1,636 @@
+; Symbol table GLOBAL
+; name factstr type STRING location 0x10000000 value "Enter a number: "
+; name outpref type STRING location 0x10000004 value "Factorial of "
+; name outsuff type STRING location 0x10000008 value " is "
+; name x type INT location 0x20000000
+; Function: INT fact([INT])
+; Function: INT main([])
+
+; Symbol table main
+; name res type INT location -4
+
+; Symbol table fact
+; name n type INT location 12
+
+In BinaryOpNode type = ADD
+In BinaryOpNode inst = ADD $t1, $gx, 2
+Ret val: $t2
+In AssignNode left temp = $l-4
+In BinaryOpNode type = ADD
+In BinaryOpNode inst = ADD $t3, $gx, 2
+Instruction List
+PUTS $gfactstr
+GETI $gx
+ADD $t1, $gx, 2
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 4
+MV $l-4, $t2
+PUTS $goutpref
+ADD $t3, $gx, 2
+PUTI $t3
+PUTS $goutsuff
+PUTI $l-4
+MV $l8, 0
+J func_ret_main
+
+
+HashMap
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx, $t3]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l-4, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx, $t2]	
+[$gfactstr, $goutpref, $goutsuff, $gx, $t2]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+[$gfactstr, $goutpref, $goutsuff, $gx, $t1]	
+[$gfactstr, $goutpref, $goutsuff, $gx]	
+0 [$gfactstr, $goutpref, $goutsuff]
+
+1 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+2 [$gfactstr, $goutpref, $goutsuff, $gx, $t1]
+
+3 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+4 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+5 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+6 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+7 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+8 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+9 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+10 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+11 [$gfactstr, $goutpref, $goutsuff, $gx]
+
+12 [$gfactstr, $goutpref, $goutsuff, $gx, $t2]
+
+13 [$gfactstr, $goutpref, $goutsuff, $gx, $t2]
+
+14 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+15 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+16 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx, $t3]
+
+17 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+18 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+19 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+20 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+21 [$l-4, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :PUTS $gfactstr
+came to puts
+
+Instruction :GETI $gx
+Allocate: this.src1Reg null
+empty spot
+4
+
+Instruction :ADD $t1, $gx, 2
+ENSURE: Int reg list
+[no, no, no, address, $gx, empty, empty, empty, no]
+Allocate: this.src1Reg $gx
+empty spot
+5
+allocated index 5 allocated value 2
+freeing: 5
+Freed: 2 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :PUSH $t1
+pushint: src1= $t1
+ENSURE: Int reg list
+[no, no, no, address, $gx, $t1, empty, empty, no]
+freeing: 5
+Freed: $t1 in x5
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_fact
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT $t2
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :MV $l-4, $t2
+ENSURE: Int reg list
+[no, no, no, address, $gx, $t2, empty, empty, no]
+freeing: 5
+Freed: $t2 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :PUTS $goutpref
+came to puts
+
+Instruction :ADD $t3, $gx, 2
+ENSURE: Int reg list
+[no, no, no, address, $gx, $l-4, empty, empty, no]
+Allocate: this.src1Reg $gx
+empty spot
+6
+allocated index 6 allocated value 2
+freeing: 6
+Freed: 2 in x6
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :PUTI $t3
+ENSURE: Int reg list
+[no, no, no, address, $gx, $l-4, $t3, empty, no]
+freeing: 6
+Freed: $t3 in x6
+
+Instruction :PUTS $goutsuff
+came to puts
+
+Instruction :PUTI $l-4
+ENSURE: Int reg list
+[no, no, no, address, $gx, $l-4, empty, empty, no]
+
+Instruction :MV $l8, 0
+Allocate: this.src1Reg *
+empty spot
+6
+allocated index 6 allocated value 0
+freeing: 6
+Freed: 0 in x6
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :J func_ret_main
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$gx
+Saving $gx
+x5 =$l-4
+x6 =$l8
+x7 =empty
+x8 =no
+FnNode body: PUTS $gfactstr
+GETI $gx
+ADD $t1, $gx, 2
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 4
+MV $l-4, $t2
+PUTS $goutpref
+ADD $t3, $gx, 2
+PUTI $t3
+PUTS $goutsuff
+PUTI $l-4
+MV $l8, 0
+J func_ret_main
+
+In BinaryOpNode type = SUB
+In BinaryOpNode inst = SUB $t1, $l12, 1
+Ret val: $t2
+In BinaryOpNode type = MUL
+In BinaryOpNode inst = MUL $t3, $l12, $t2
+Instruction List
+BGT $l12, 1, else_1
+
+
+HashMap
+0 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :BGT $l12, 1, else_1
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l12
+Allocate: this.src1Reg $l12
+empty spot
+5
+allocated index 5 allocated value 1
+freeing: 5
+Freed: 1 in x5
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l12
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+MV $l8, 1
+J func_ret_fact
+
+
+HashMap
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+0 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+1 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :MV $l8, 1
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value 1
+freeing: 4
+Freed: 1 in x4
+Allocate: this.src1Reg null
+empty spot
+4
+
+Instruction :J func_ret_fact
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l8
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+J out_1
+
+
+HashMap
+0 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :J out_1
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =empty
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+else_1:
+SUB $t1, $l12, 1
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 4
+MUL $t3, $l12, $t2
+MV $l8, $t3
+J func_ret_fact
+
+
+HashMap
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t3]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t2]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t2]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx]	
+[$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t1]	
+0 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+1 [$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t1]
+
+2 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+3 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+4 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+5 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+6 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+7 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+8 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+9 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+10 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+11 [$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t2]
+
+12 [$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t2]
+
+13 [$l12, $gfactstr, $goutpref, $goutsuff, $gx, $t3]
+
+14 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+15 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :else_1:
+
+Instruction :SUB $t1, $l12, 1
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l12
+Allocate: this.src1Reg $l12
+empty spot
+5
+allocated index 5 allocated value 1
+freeing: 5
+Freed: 1 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :PUSH $t1
+pushint: src1= $t1
+ENSURE: Int reg list
+[no, no, no, address, $l12, $t1, empty, empty, no]
+freeing: 5
+Freed: $t1 in x5
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_fact
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT $t2
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :MUL $t3, $l12, $t2
+ENSURE: Int reg list
+[no, no, no, address, $l12, $t2, empty, empty, no]
+ENSURE: Int reg list
+[no, no, no, address, $l12, $t2, empty, empty, no]
+freeing: 5
+Freed: $t2 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :MV $l8, $t3
+ENSURE: Int reg list
+[no, no, no, address, $l12, $t3, empty, empty, no]
+freeing: 5
+Freed: $t3 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :J func_ret_fact
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l12
+x5 =$l8
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+out_1:
+
+
+HashMap
+0 [$l12, $gfactstr, $goutpref, $goutsuff, $gx]
+
+
+Instruction :out_1:
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =empty
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+FnNode body: BGT $l12, 1, else_1
+MV $l8, 1
+J func_ret_fact
+J out_1
+else_1:
+SUB $t1, $l12, 1
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 4
+MUL $t3, $l12, $t2
+MV $l8, $t3
+J func_ret_fact
+out_1:
+
+.section .text
+;Current temp: null
+;IR Code: 
+MV fp, sp
+JR func_main
+HALT
+;
+func_main:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+SW x6, 0(sp)
+ADDI sp, sp, -4
+LA x3, 0x10000000
+PUTS x3
+GETI x4
+LI x5, 2
+ADD x5, x4, x5
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+MV x5, x5
+LA x3, 0x10000004
+PUTS x3
+LI x6, 2
+ADD x6, x4, x6
+PUTI x6
+LA x3, 0x10000008
+PUTS x3
+PUTI x5
+LI x6, 0
+MV x6, x6
+LA x3, 0x20000000
+SW x4, 0(x3)
+SW x5, -4(fp)
+SW x6, 8(fp)
+J func_ret_main
+func_ret_main:
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+func_fact:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, 0
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+LW x4, 12(fp)
+LI x5, 1
+BGT x4, x5, else_1
+LI x4, 1
+MV x4, x4
+SW x4, 8(fp)
+J func_ret_fact
+J out_1
+else_1:
+LW x4, 12(fp)
+LI x5, 1
+SUB x5, x4, x5
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_fact
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+MUL x5, x4, x5
+MV x5, x5
+SW x5, 8(fp)
+J func_ret_fact
+out_1:
+func_ret_fact:
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+
+
+.section .strings
+0x10000000 "Enter a number: "
+0x10000004 "Factorial of "
+0x10000008 " is "

@@ -1,0 +1,667 @@
+; Symbol table GLOBAL
+; name curVal type FLOAT location 0x20000000
+; name x type FLOAT location 0x20000004
+; name degree type INT location 0x20000008
+; Function: FLOAT poly([FLOAT, FLOAT, INT])
+; name val type STRING location 0x10000000 value "Enter x value to evaluate: "
+; name degreePrompt type STRING location 0x10000004 value "Enter a degree: "
+; name prompt type STRING location 0x10000008 value "Enter coefficient: "
+; Function: INT main([])
+
+; Symbol table main
+; name cur type INT location -4
+
+; Symbol table poly
+; name degree type INT location 12
+; name x type FLOAT location 16
+; name curVal type FLOAT location 20
+; name coeff type FLOAT location -4
+
+In AssignNode left temp = $gcurVal
+In AssignNode left temp = $l-4
+Ret val: $f1
+In AssignNode left temp = $gcurVal
+Instruction List
+FMV.S $gcurVal, 0.0
+MV $l-4, 0
+PUTS $gval
+GETF $gx
+PUTS $gdegreePrompt
+GETI $gdegree
+PUSHFLOAT $gcurVal
+ADDI sp, sp, -4
+PUSHFLOAT $gx
+ADDI sp, sp, -4
+PUSH $gdegree
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPFLOAT $f1
+ADDI sp, sp, 12
+FMV.S $gcurVal, $f1
+PUTF $gcurVal
+MV $l8, 0
+J func_ret_main
+
+
+HashMap
+[$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $gcurVal]	
+[$l-4, $gx, $gval, $gdegreePrompt, $gprompt, $gcurVal]	
+[$l-4, $gx, $gval, $gdegreePrompt, $gprompt, $gcurVal]	
+[$l-4, $gval, $gdegreePrompt, $gprompt, $gcurVal]	
+[$l-4, $gval, $gdegreePrompt, $gprompt, $gcurVal]	
+0 [$gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+1 [$l-4, $gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+2 [$l-4, $gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+3 [$l-4, $gx, $gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+4 [$l-4, $gx, $gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+5 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $gcurVal]
+
+6 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+7 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+8 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+9 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+10 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+11 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+12 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+13 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+14 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+15 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+16 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+17 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+18 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+19 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]
+
+20 [$l-4, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]
+
+21 [$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+22 [$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+23 [$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+24 [$l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+
+Instruction :FMV.S $gcurVal, 0.0
+Allocate: this.src1Reg null
+Freed: 0.0 in f0
+Allocate: this.src1Reg null
+
+Instruction :MV $l-4, 0
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value 0
+freeing: 4
+Freed: 0 in x4
+Allocate: this.src1Reg null
+empty spot
+4
+
+Instruction :PUTS $gval
+came to puts
+
+Instruction :GETF $gx
+Allocate: this.src1Reg null
+
+Instruction :PUTS $gdegreePrompt
+came to puts
+
+Instruction :GETI $gdegree
+Allocate: this.src1Reg null
+empty spot
+5
+
+Instruction :PUSHFLOAT $gcurVal
+Freed: $gcurVal in f0
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSHFLOAT $gx
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH $gdegree
+pushint: src1= $gdegree
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $gdegree, empty, empty, no]
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_poly
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPFLOAT $f1
+Allocate: this.src1Reg null
+
+Instruction :ADDI sp, sp, 12
+
+Instruction :FMV.S $gcurVal, $f1
+Freed: $f1 in f0
+Allocate: this.src1Reg null
+
+Instruction :PUTF $gcurVal
+
+Instruction :MV $l8, 0
+Allocate: this.src1Reg null
+empty spot
+6
+allocated index 6 allocated value 0
+freeing: 6
+Freed: 0 in x6
+Allocate: this.src1Reg null
+empty spot
+6
+
+Instruction :J func_ret_main
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l-4
+x5 =$gdegree
+Saving $gdegree
+x6 =$l8
+x7 =empty
+x8 =no
+FnNode body: FMV.S $gcurVal, 0.0
+MV $l-4, 0
+PUTS $gval
+GETF $gx
+PUTS $gdegreePrompt
+GETI $gdegree
+PUSHFLOAT $gcurVal
+ADDI sp, sp, -4
+PUSHFLOAT $gx
+ADDI sp, sp, -4
+PUSH $gdegree
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPFLOAT $f1
+ADDI sp, sp, 12
+FMV.S $gcurVal, $f1
+PUTF $gcurVal
+MV $l8, 0
+J func_ret_main
+
+In BinaryOpNode type = SUB
+In BinaryOpNode inst = SUB $t1, $l12, 1
+Ret val: $f1
+In AssignNode left temp = $l20
+In BinaryOpNode type = MUL
+In BinaryOpNode inst = FMUL.S $f2, $l16, $l20
+In BinaryOpNode type = ADD
+In BinaryOpNode inst = FADD.S $f3, $f2, $l-4
+Instruction List
+BLE $l12, 0, out_1
+
+
+HashMap
+0 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+
+Instruction :BLE $l12, 0, out_1
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l12
+Allocate: this.src1Reg $l12
+empty spot
+5
+allocated index 5 allocated value 0
+freeing: 5
+Freed: 0 in x5
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l12
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+PUSHFLOAT $l20
+ADDI sp, sp, -4
+PUSHFLOAT $l16
+ADDI sp, sp, -4
+SUB $t1, $l12, 1
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPFLOAT $f1
+ADDI sp, sp, 12
+FMV.S $l20, $f1
+
+
+HashMap
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $t1]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+0 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+1 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+2 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+3 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+4 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $t1]
+
+5 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+6 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+7 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+8 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+9 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+10 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+11 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+12 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+13 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+14 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]
+
+15 [$l12, $l16, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f1]
+
+16 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+
+Instruction :PUSHFLOAT $l20
+Allocate: this.src1Reg null
+Freed: $l20 in f0
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSHFLOAT $l16
+Allocate: this.src1Reg null
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :SUB $t1, $l12, 1
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l12
+Allocate: this.src1Reg $l12
+empty spot
+5
+allocated index 5 allocated value 1
+freeing: 5
+Freed: 1 in x5
+Allocate: this.src1Reg *
+empty spot
+5
+
+Instruction :PUSH $t1
+pushint: src1= $t1
+ENSURE: Int reg list
+[no, no, no, address, $l12, $t1, empty, empty, no]
+freeing: 5
+Freed: $t1 in x5
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_poly
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPFLOAT $f1
+Allocate: this.src1Reg *
+
+Instruction :ADDI sp, sp, 12
+
+Instruction :FMV.S $l20, $f1
+Freed: $f1 in f1
+Allocate: this.src1Reg *
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l12
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+Instruction List
+out_1:
+PUTS $gprompt
+GETF $l-4
+FMUL.S $f2, $l16, $l20
+FADD.S $f3, $f2, $l-4
+FMV.S $l8, $f3
+J func_ret_poly
+
+
+HashMap
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f3]	
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f2]	
+[$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+[$l12, $l16, $l20, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]	
+0 [$l12, $l16, $l20, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+1 [$l12, $l16, $l20, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+2 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+3 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f2]
+
+4 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt, $f3]
+
+5 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+6 [$l12, $l16, $l20, $l-4, $gcurVal, $gx, $gdegree, $gval, $gdegreePrompt, $gprompt]
+
+
+Instruction :out_1:
+
+Instruction :PUTS $gprompt
+came to puts
+
+Instruction :GETF $l-4
+Allocate: this.src1Reg null
+
+Instruction :FMUL.S $f2, $l16, $l20
+Allocate: this.src1Reg null
+Allocate: this.src1Reg $l16
+Allocate: this.src1Reg *
+
+Instruction :FADD.S $f3, $f2, $l-4
+Freed: $f2 in f3
+Allocate: this.src1Reg *
+
+Instruction :FMV.S $l8, $f3
+Freed: $f3 in f3
+Allocate: this.src1Reg *
+
+Instruction :J func_ret_poly
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =empty
+x5 =empty
+x6 =empty
+x7 =empty
+x8 =no
+FnNode body: BLE $l12, 0, out_1
+PUSHFLOAT $l20
+ADDI sp, sp, -4
+PUSHFLOAT $l16
+ADDI sp, sp, -4
+SUB $t1, $l12, 1
+PUSH $t1
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPFLOAT $f1
+ADDI sp, sp, 12
+FMV.S $l20, $f1
+out_1:
+PUTS $gprompt
+GETF $l-4
+FMUL.S $f2, $l16, $l20
+FADD.S $f3, $f2, $l-4
+FMV.S $l8, $f3
+J func_ret_poly
+
+.section .text
+;Current temp: null
+;IR Code: 
+MV fp, sp
+JR func_main
+HALT
+;
+func_main:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+SW x6, 0(sp)
+ADDI sp, sp, -4
+FSW f0, 0(sp)
+ADDI sp, sp, -4
+FSW f1, 0(sp)
+ADDI sp, sp, -4
+FIMM.S f0, 0.0
+FMV.S f0, f0
+LI x4, 0
+MV x4, x4
+LA x3, 0x10000000
+PUTS x3
+GETF f1
+LA x3, 0x10000004
+PUTS x3
+GETI x5
+FSW f0, 0(sp)
+ADDI sp, sp, -4
+FSW f1, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+FLW f0, 0(sp)
+ADDI sp, sp, 12
+FMV.S f0, f0
+PUTF f0
+LI x6, 0
+MV x6, x6
+LA x3, 0x20000000
+FSW f0, 0(x3)
+LA x3, 0x20000004
+FSW f1, 0(x3)
+SW x4, -4(fp)
+LA x3, 0x20000008
+SW x5, 0(x3)
+SW x6, 8(fp)
+J func_ret_main
+func_ret_main:
+ADDI sp, sp, 4
+FLW f1, 0(sp)
+ADDI sp, sp, 4
+FLW f0, 0(sp)
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+func_poly:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+FSW f0, 0(sp)
+ADDI sp, sp, -4
+FSW f1, 0(sp)
+ADDI sp, sp, -4
+FSW f2, 0(sp)
+ADDI sp, sp, -4
+FSW f3, 0(sp)
+ADDI sp, sp, -4
+LW x4, 12(fp)
+LI x5, 0
+BLE x4, x5, out_1
+FLW f0, 20(fp)
+FSW f0, 0(sp)
+ADDI sp, sp, -4
+FLW f0, 16(fp)
+FSW f0, 0(sp)
+ADDI sp, sp, -4
+LW x4, 12(fp)
+LI x5, 1
+SUB x5, x4, x5
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_poly
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+FLW f1, 0(sp)
+ADDI sp, sp, 12
+FMV.S f1, f1
+FSW f1, 20(fp)
+out_1:
+LA x3, 0x10000008
+PUTS x3
+GETF f0
+FLW f1, 16(fp)
+FLW f2, 20(fp)
+FMUL.S f3, f1, f2
+FADD.S f3, f3, f0
+FMV.S f3, f3
+FSW f0, -4(fp)
+FSW f3, 8(fp)
+J func_ret_poly
+func_ret_poly:
+ADDI sp, sp, 4
+FLW f3, 0(sp)
+ADDI sp, sp, 4
+FLW f2, 0(sp)
+ADDI sp, sp, 4
+FLW f1, 0(sp)
+ADDI sp, sp, 4
+FLW f0, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+
+
+.section .strings
+0x10000000 "Enter x value to evaluate: "
+0x10000004 "Enter a degree: "
+0x10000008 "Enter coefficient: "

@@ -1,0 +1,581 @@
+; Symbol table GLOBAL
+; Function: INT foo([INT, INT])
+; Function: INT bar([INT, INT])
+; Function: INT main([])
+
+; Symbol table main
+; name a type INT location -4
+; name b type INT location -8
+; name c type INT location -12
+; name d type INT location -16
+
+; Symbol table foo
+; name y type INT location 12
+; name x type INT location 16
+
+; Symbol table bar
+; name y type INT location 12
+; name x type INT location 16
+
+Ret val: $t1
+In AssignNode left temp = $l-12
+Ret val: $t2
+In AssignNode left temp = $l-16
+Instruction List
+GETI $l-4
+GETI $l-8
+PUSH $l-4
+ADDI sp, sp, -4
+PUSH $l-8
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_foo
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t1
+ADDI sp, sp, 8
+MV $l-12, $t1
+PUSH $l-4
+ADDI sp, sp, -4
+PUSH $l-8
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_bar
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 8
+MV $l-16, $t2
+PUTI $l-12
+PUTI $l-16
+MV $l8, 0
+J func_ret_main
+
+
+HashMap
+[$l-4, $l-8, $l-12, $l-16]	
+[$l-4, $l-8, $l-12, $l-16]	
+[$l-4, $l-8, $l-12, $l-16]	
+[$l-4, $l-8, $l-12, $l-16]	
+[$l-4, $l-8, $l-12, $l-16]	
+[$l-4, $l-8, $l-12, $t2]	
+[$l-4, $l-8, $l-12, $t2]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $l-12]	
+[$l-4, $l-8, $t1]	
+[$l-4, $l-8, $t1]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+[$l-4, $l-8]	
+0 [$l-4]
+
+1 [$l-4, $l-8]
+
+2 [$l-4, $l-8]
+
+3 [$l-4, $l-8]
+
+4 [$l-4, $l-8]
+
+5 [$l-4, $l-8]
+
+6 [$l-4, $l-8]
+
+7 [$l-4, $l-8]
+
+8 [$l-4, $l-8]
+
+9 [$l-4, $l-8]
+
+10 [$l-4, $l-8]
+
+11 [$l-4, $l-8]
+
+12 [$l-4, $l-8]
+
+13 [$l-4, $l-8, $t1]
+
+14 [$l-4, $l-8, $t1]
+
+15 [$l-4, $l-8, $l-12]
+
+16 [$l-4, $l-8, $l-12]
+
+17 [$l-4, $l-8, $l-12]
+
+18 [$l-4, $l-8, $l-12]
+
+19 [$l-4, $l-8, $l-12]
+
+20 [$l-4, $l-8, $l-12]
+
+21 [$l-4, $l-8, $l-12]
+
+22 [$l-4, $l-8, $l-12]
+
+23 [$l-4, $l-8, $l-12]
+
+24 [$l-4, $l-8, $l-12]
+
+25 [$l-4, $l-8, $l-12]
+
+26 [$l-4, $l-8, $l-12]
+
+27 [$l-4, $l-8, $l-12, $t2]
+
+28 [$l-4, $l-8, $l-12, $t2]
+
+29 [$l-4, $l-8, $l-12, $l-16]
+
+30 [$l-4, $l-8, $l-12, $l-16]
+
+31 [$l-4, $l-8, $l-12, $l-16]
+
+32 [$l-4, $l-8, $l-12, $l-16]
+
+33 [$l-4, $l-8, $l-12, $l-16]
+
+
+Instruction :GETI $l-4
+Allocate: this.src1Reg null
+empty spot
+4
+
+Instruction :GETI $l-8
+Allocate: this.src1Reg null
+empty spot
+5
+
+Instruction :PUSH $l-4
+pushint: src1= $l-4
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, empty, empty, no]
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH $l-8
+pushint: src1= $l-8
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, empty, empty, no]
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_foo
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT $t1
+Allocate: this.src1Reg null
+empty spot
+6
+
+Instruction :ADDI sp, sp, 8
+
+Instruction :MV $l-12, $t1
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $t1, empty, no]
+freeing: 6
+Freed: $t1 in x6
+Allocate: this.src1Reg null
+empty spot
+6
+
+Instruction :PUSH $l-4
+pushint: src1= $l-4
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $l-12, empty, no]
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH $l-8
+pushint: src1= $l-8
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $l-12, empty, no]
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :PUSH ra
+pushint: src1= ra
+
+Instruction :ADDI sp, sp, -4
+
+Instruction :JR func_bar
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT ra
+
+Instruction :ADDI sp, sp, 4
+
+Instruction :POPINT $t2
+Allocate: this.src1Reg null
+empty spot
+7
+
+Instruction :ADDI sp, sp, 8
+
+Instruction :MV $l-16, $t2
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $l-12, $t2, no]
+freeing: 7
+Freed: $t2 in x7
+Allocate: this.src1Reg null
+empty spot
+7
+
+Instruction :PUTI $l-12
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $l-12, $l-16, no]
+
+Instruction :PUTI $l-16
+ENSURE: Int reg list
+[no, no, no, address, $l-4, $l-8, $l-12, $l-16, no]
+
+Instruction :MV $l8, 0
+Allocate: this.src1Reg null
+Allocate:intRegList no
+Allocate:intRegList no
+Allocate:intRegList no
+Allocate:intRegList address
+Allocate:intRegList $l-4
+Allocate:intRegList $l-8
+Allocate:intRegList $l-12
+Allocate:intRegList $l-16
+Allocate:intRegList no
+Came here Allocate: this.src1Reg true
+freeing: 4
+Freed: $l-4 in x4
+4
+allocated index 4 allocated value 0
+freeing: 4
+Freed: 0 in x4
+Allocate: this.src1Reg null
+empty spot
+4
+
+Instruction :J func_ret_main
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l8
+x5 =$l-8
+x6 =$l-12
+x7 =$l-16
+x8 =no
+FnNode body: GETI $l-4
+GETI $l-8
+PUSH $l-4
+ADDI sp, sp, -4
+PUSH $l-8
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_foo
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t1
+ADDI sp, sp, 8
+MV $l-12, $t1
+PUSH $l-4
+ADDI sp, sp, -4
+PUSH $l-8
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+PUSH ra
+ADDI sp, sp, -4
+JR func_bar
+ADDI sp, sp, 4
+POPINT ra
+ADDI sp, sp, 4
+POPINT $t2
+ADDI sp, sp, 8
+MV $l-16, $t2
+PUTI $l-12
+PUTI $l-16
+MV $l8, 0
+J func_ret_main
+
+In BinaryOpNode type = ADD
+In BinaryOpNode inst = ADD $t1, $l16, $l12
+Instruction List
+ADD $t1, $l16, $l12
+MV $l8, $t1
+J func_ret_foo
+
+
+HashMap
+[$l12, $l16]	
+[$l12, $l16]	
+0 [$l12, $l16, $t1]
+
+1 [$l12, $l16]
+
+2 [$l12, $l16]
+
+
+Instruction :ADD $t1, $l16, $l12
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l16
+Allocate: this.src1Reg $l16
+empty spot
+5
+allocated index 5 allocated value $l12
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :MV $l8, $t1
+ENSURE: Int reg list
+[no, no, no, address, $l16, $l12, $t1, empty, no]
+freeing: 6
+Freed: $t1 in x6
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :J func_ret_foo
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l16
+x5 =$l12
+x6 =$l8
+x7 =empty
+x8 =no
+FnNode body: ADD $t1, $l16, $l12
+MV $l8, $t1
+J func_ret_foo
+
+In BinaryOpNode type = SUB
+In BinaryOpNode inst = SUB $t1, $l16, $l12
+Instruction List
+SUB $t1, $l16, $l12
+MV $l8, $t1
+J func_ret_bar
+
+
+HashMap
+[$l12, $l16]	
+[$l12, $l16]	
+0 [$l12, $l16, $t1]
+
+1 [$l12, $l16]
+
+2 [$l12, $l16]
+
+
+Instruction :SUB $t1, $l16, $l12
+Allocate: this.src1Reg null
+empty spot
+4
+allocated index 4 allocated value $l16
+Allocate: this.src1Reg $l16
+empty spot
+5
+allocated index 5 allocated value $l12
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :MV $l8, $t1
+ENSURE: Int reg list
+[no, no, no, address, $l16, $l12, $t1, empty, no]
+freeing: 6
+Freed: $t1 in x6
+Allocate: this.src1Reg *
+empty spot
+6
+
+Instruction :J func_ret_bar
+Entering reg save
+x0 =no
+x1 =no
+x2 =no
+x3 =address
+x4 =$l16
+x5 =$l12
+x6 =$l8
+x7 =empty
+x8 =no
+FnNode body: SUB $t1, $l16, $l12
+MV $l8, $t1
+J func_ret_bar
+
+.section .text
+;Current temp: null
+;IR Code: 
+MV fp, sp
+JR func_main
+HALT
+;
+func_main:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, -16
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+SW x6, 0(sp)
+ADDI sp, sp, -4
+SW x7, 0(sp)
+ADDI sp, sp, -4
+GETI x4
+GETI x5
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_foo
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 8
+MV x6, x6
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+ADDI sp, sp, -4
+SW ra, 0(sp)
+ADDI sp, sp, -4
+JR func_bar
+ADDI sp, sp, 4
+LW ra, 0(sp)
+ADDI sp, sp, 4
+LW x7, 0(sp)
+ADDI sp, sp, 8
+MV x7, x7
+PUTI x6
+PUTI x7
+SW x4, -4(fp)
+LI x4, 0
+MV x4, x4
+SW x4, 8(fp)
+SW x5, -8(fp)
+SW x6, -12(fp)
+SW x7, -16(fp)
+J func_ret_main
+func_ret_main:
+ADDI sp, sp, 4
+LW x7, 0(sp)
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+func_foo:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, 0
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+SW x6, 0(sp)
+ADDI sp, sp, -4
+LW x4, 16(fp)
+LW x5, 12(fp)
+ADD x6, x4, x5
+MV x6, x6
+SW x6, 8(fp)
+J func_ret_foo
+func_ret_foo:
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+func_bar:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, 0
+SW x4, 0(sp)
+ADDI sp, sp, -4
+SW x5, 0(sp)
+ADDI sp, sp, -4
+SW x6, 0(sp)
+ADDI sp, sp, -4
+LW x4, 16(fp)
+LW x5, 12(fp)
+SUB x6, x4, x5
+MV x6, x6
+SW x6, 8(fp)
+J func_ret_bar
+func_ret_bar:
+ADDI sp, sp, 4
+LW x6, 0(sp)
+ADDI sp, sp, 4
+LW x5, 0(sp)
+ADDI sp, sp, 4
+LW x4, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+
+
+.section .strings

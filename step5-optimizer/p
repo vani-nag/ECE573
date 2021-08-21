@@ -1,0 +1,218 @@
+; Symbol table GLOBAL
+; name welcome type STRING location 0x10000000 value "Compute GCD(x, y) using Euclid's algorithm \n"
+; name xprompt type STRING location 0x10000004 value "Enter x: "
+; name yprompt type STRING location 0x10000008 value "Enter y: "
+; name result type STRING location 0x1000000c value "GCD(x, y) = "
+; name x type INT location 0x20000000
+; name y type INT location 0x20000004
+; name mod type INT location 0x20000008
+; name tmp type INT location 0x2000000c
+; name prompt type STRING location 0x10000010 value "Enter a number: "
+; Function: INT main([])
+
+; Symbol table main
+
+In AssignNode left temp = $gtmp
+In AssignNode left temp = $gx
+In AssignNode left temp = $gy
+In BinaryOpNode type = SUB
+In BinaryOpNode inst = SUB $t1, $gx, $gy
+In AssignNode left temp = $gx
+FnNode: name= main
+FnNode: vars= []
+Instruction List
+PUTS $gwelcome
+PUTS $gxprompt
+GETI $gx
+PUTS $gyprompt
+GETI $gy
+
+
+HashMap
+0 [$gyprompt, $gxprompt]
+
+1 [$gyprompt]
+
+2 [$gyprompt]
+
+3 []
+
+4 []
+
+Instruction List
+loop_2:
+BEQ $gx, 0, out_3
+
+
+HashMap
+0 [$gx]
+
+1 [$gx]
+
+Instruction List
+BGT $gx, $gy, out_1
+
+
+HashMap
+0 []
+
+Instruction List
+MV $gtmp, $gx
+MV $gx, $gy
+MV $gy, $gtmp
+
+
+HashMap
+0 [$gtmp, $gy]
+
+1 [$gtmp]
+
+2 [$gtmp]
+
+Instruction List
+out_1:
+
+
+HashMap
+0 []
+
+Instruction List
+loop_1:
+BLT $gx, $gy, out_2
+
+
+HashMap
+0 [$gx, $gy]
+
+1 [$gx, $gy]
+
+Instruction List
+SUB $t1, $gx, $gy
+MV $gx, $t1
+J loop_1
+
+
+HashMap
+0 [$t1]
+
+1 []
+
+2 []
+
+Instruction List
+out_2:
+PUTI $gx
+PUTI $gy
+J loop_2
+
+
+HashMap
+0 [$gy, $gx]
+
+1 [$gy]
+
+2 []
+
+3 []
+
+Instruction List
+out_3:
+PUTS $gresult
+PUTI $gy
+MV $l8, 0
+J func_ret_main
+
+
+HashMap
+0 [$gy, $gresult]
+
+1 [$gy]
+
+2 []
+
+3 []
+
+4 []
+
+FnNode body: PUTS $gwelcome
+PUTS $gxprompt
+GETI $gx
+PUTS $gyprompt
+GETI $gy
+loop_2:
+BEQ $gx, 0, out_3
+BGT $gx, $gy, out_1
+MV $gtmp, $gx
+MV $gx, $gy
+MV $gy, $gtmp
+out_1:
+loop_1:
+BLT $gx, $gy, out_2
+SUB $t1, $gx, $gy
+MV $gx, $t1
+J loop_1
+out_2:
+PUTI $gx
+PUTI $gy
+J loop_2
+out_3:
+PUTS $gresult
+PUTI $gy
+MV $l8, 0
+J func_ret_main
+
+.section .text
+;Current temp: null
+;IR Code: 
+MV fp, sp
+JR func_main
+HALT
+;
+func_main:
+SW fp, 0(sp)
+MV fp, sp
+ADDI sp, sp, -4
+ADDI sp, sp, 0
+SW t1, 0(sp)
+ADDI sp, sp, -4
+PUTS $gwelcome
+PUTS $gxprompt
+GETI $gx
+PUTS $gyprompt
+GETI $gy
+loop_2:
+BEQ $gx, 0, out_3
+BGT $gx, $gy, out_1
+MV $gtmp, $gx
+MV $gx, $gy
+MV $gy, $gtmp
+out_1:
+loop_1:
+BLT $gx, $gy, out_2
+SUB $t1, $gx, $gy
+MV $gx, $t1
+J loop_1
+out_2:
+PUTI $gx
+PUTI $gy
+J loop_2
+out_3:
+PUTS $gresult
+PUTI $gy
+MV $l8, 0
+J func_ret_main
+func_ret_main:
+ADDI sp, sp, 4
+LW t1, 0(sp)
+MV sp, fp
+LW fp, 0(fp)
+RET
+;
+
+
+.section .strings
+0x10000000 "Compute GCD(x, y) using Euclid's algorithm \n"
+0x10000004 "Enter x: "
+0x10000008 "Enter y: "
+0x1000000c "GCD(x, y) = "
+0x10000010 "Enter a number: "
