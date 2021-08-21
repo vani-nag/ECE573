@@ -1,0 +1,22 @@
+; Symbol table GLOBAL
+; Function: INT foo([INT, INT])
+; Function: INT bar([INT, INT])
+; Function: INT main([])
+
+; Symbol table main
+; name a type INT location -4
+; name b type INT location -8
+; name c type INT location -12
+; name d type INT location -16
+; name k type FLOAT location -20
+
+; Symbol table foo
+; name y type INT location 12
+; name x type INT location 16
+; name b type INT location -4
+; name c type FLOAT location -8
+
+; Symbol table bar
+; name y type INT location 12
+; name x type INT location 16
+
